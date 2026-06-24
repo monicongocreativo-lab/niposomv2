@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Niposom V2 Header + Hero</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-site-header>
+      <a class="skip-link" href="#main">Saltar para o conteúdo</a>
+
+      <div class="topbar">
+        <div class="shell topbar-inner">
+          <a class="brand" href="/" aria-label="Niposom início">
+            <img src="./assets/niposom-mark.png" alt="Niposom" />
+          </a>
+
+          <div class="desktop-commerce">
+            <form class="lookup-form" action="#produtos" role="search" aria-label="Pesquisa de produtos" data-lookup-form>
+              <button class="brand-select" type="button" aria-expanded="false" aria-controls="lookup-panel" data-lookup-toggle>
+                <span data-lookup-label>Brand</span>
+                <span class="chevron" aria-hidden="true"></span>
+              </button>
+              <div class="lookup-panel" id="lookup-panel" data-lookup-panel>
+                <div class="lookup-grid" role="menu" aria-label="Critério de pesquisa">
+                  <button type="button" role="menuitem" data-lookup-option data-label="Marca" data-placeholder="Pesquisar por marca...">Marca</button>
+                  <button type="button" role="menuitem" data-lookup-option data-label="Descrição" data-placeholder="Descrição do produto...">Descrição do produto</button>
+                  <button type="button" role="menuitem" data-lookup-option data-label="Famílias" data-placeholder="Pesquisar por famílias...">Famílias</button>
+                  <button type="button" role="menuitem" data-lookup-option data-label="Tipo" data-placeholder="Pesquisar por tipo de produto...">Tipo de produto</button>
+                  <button type="button" role="menuitem" data-lookup-option data-label="Novidades" data-placeholder="Pesquisar novidades...">Novidades</button>
+                  <button type="button" role="menuitem" data-lookup-option data-label="Chegaram" data-placeholder="Pesquisar acabados de chegar...">Acabados de chegar</button>
+                  <button type="button" role="menuitem" data-lookup-option data-label="Todas" data-placeholder="Pesquisar todas las categorias...">Todas las categorias</button>
+                </div>
+              </div>
+              <label class="sr-only" for="product-description">Descrição do produto</label>
+              <input id="product-description" name="description" type="search" placeholder="Descrição do produto..." autocomplete="off" />
+              <button class="search-button" type="submit" aria-label="Pesquisar">
+                <span class="search-icon" aria-hidden="true"></span>
+              </button>
+              <div class="search-preview-panel" data-search-preview hidden>
+                <div class="search-preview-items" data-search-preview-items></div>
+              </div>
+            </form>
+
+            <form class="quick-cart" action="#carrinho" aria-label="Adicionar produto ao carrinho" data-quick-cart>
+              <label class="sr-only" for="ean">EAN</label>
+              <input id="ean" name="ean" type="text" inputmode="numeric" placeholder="EAN..." />
+              <label class="sr-only" for="sku">SKU</label>
+              <input id="sku" name="sku" type="text" placeholder="Add SKU to cart..." required />
+              <label class="sr-only" for="qty">Quantidade</label>
+              <input id="qty" class="qty-input" name="qty" type="number" min="1" inputmode="numeric" placeholder="QTY" />
+              <button class="add-button" type="submit" data-label="Adicionar">Adicionar</button>
+            </form>
+
+            <button class="commerce-link account-toggle" type="button" aria-label="Abrir acesso de conta" aria-expanded="false" aria-controls="account-panel" data-account-toggle>
+              <span class="account-icon" aria-hidden="true"></span>
+              <span>Conta</span>
+            </button>
+            <button class="commerce-link cart-toggle" type="button" aria-label="Abrir carrinho" aria-expanded="false" aria-controls="cart-panel" data-cart-toggle>
+              <span class="cart-icon" aria-hidden="true"></span>
+              <span>Carrinho</span>
+              <span class="cart-badge" data-cart-badge>0</span>
+            </button>
+          </div>
+
+          <button class="mobile-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" data-mobile-toggle>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div class="shell cart-panel" id="cart-panel" data-cart-panel>
+          <div class="cart-panel-inner">
+            <div class="cart-panel-header">
+              <div>
+                <p>Carrinho de compras</p>
+                <h2>Produtos adicionados</h2>
+              </div>
+              <span data-cart-count-label>0 produtos</span>
+            </div>
+
+            <div class="cart-items" data-cart-items>
+              <p class="cart-empty" data-cart-empty>Pesquise um produto ou adicione um SKU para criar a lista do carrinho.</p>
+            </div>
+
+            <div class="cart-panel-footer">
+              <button class="checkout-button" type="button" data-checkout-button disabled>Ir ao checkout</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="shell account-panel" id="account-panel" data-account-panel>
+          <form class="account-card" action="#conta" aria-label="Iniciar sessão na área de cliente" data-account-form>
+            <h2>Sign in</h2>
+
+            <label for="account-email">Email Address:</label>
+            <input id="account-email" name="email" type="email" autocomplete="email" />
+
+            <label for="account-password">Password:</label>
+            <input id="account-password" name="password" type="password" autocomplete="current-password" />
+
+            <button type="submit">Sign in</button>
+
+            <div class="account-actions">
+              <a href="#recuperar-password">Forgot your password?</a>
+              <a href="#criar-conta">Create Account</a>
+            </div>
+          </form>
+        </div>
+
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Menu móvel" data-mobile-menu>
+          <form class="mobile-stack" action="#produtos" role="search" aria-label="Pesquisa móvel">
+            <button class="brand-select" type="button">
+              <span>Brand</span>
+              <span class="chevron" aria-hidden="true"></span>
+            </button>
+            <input name="description" type="search" placeholder="Descrição do produto..." autocomplete="off" />
+            <button class="search-button" type="submit" aria-label="Pesquisar">
+              <span class="search-icon" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <form class="mobile-quick-cart" action="#carrinho" aria-label="Adicionar produto ao carrinho" data-quick-cart>
+            <input name="ean" type="text" inputmode="numeric" placeholder="EAN..." />
+            <input name="sku" type="text" placeholder="Add SKU to cart..." required />
+            <input class="qty-input" name="qty" type="number" min="1" inputmode="numeric" placeholder="QTY" />
+            <button class="add-button" type="submit" data-label="Adicionar">Adicionar</button>
+          </form>
+
+          <div class="mobile-commerce-links">
+            <button type="button" data-account-toggle aria-expanded="false" aria-controls="account-panel">
+              <span class="account-icon" aria-hidden="true"></span>
+              Conta
+            </button>
+            <button type="button" data-cart-toggle aria-expanded="false" aria-controls="cart-panel">
+              <span class="cart-icon" aria-hidden="true"></span>
+              Carrinho
+              <span class="cart-badge" data-cart-badge>0</span>
+            </button>
+          </div>
+
+          <div class="mobile-nav-links" data-mobile-category-menu>
+            <a href="#hardware">Hardware</a>
+            <a href="#pc">PC</a>
+            <a href="#servidores">Servidores</a>
+            <a href="#perifericos">Periféricos</a>
+            <a href="#redes">Redes</a>
+            <a href="#electronica">Electrónica</a>
+            <a href="#marcas">Marcas</a>
+            <a href="#configurador">Configurador</a>
+          </div>
+        </nav>
+      </div>
+
+      <section class="hero" aria-label="Destaques Niposom" data-hero-carousel>
+        <div class="hero-slides">
+          <article class="hero-slide is-active" data-hero-slide aria-hidden="false">
+            <img class="hero-image" src="./assets/hero-tech-chip.png" alt="" aria-hidden="true" />
+            <div class="hero-shade" aria-hidden="true"></div>
+            <div class="shell hero-content">
+              <p>Distribuição tecnológica profissional</p>
+              <h1 id="hero-title">Tecnologia para Profissionais</h1>
+              <span>Desempenho e fiabilidade em cada componente.</span>
+              <a class="hero-button" href="#produtos">Ver Produtos</a>
+            </div>
+          </article>
+
+          <article class="hero-slide" data-hero-slide aria-hidden="true">
+            <img class="hero-image" src="./assets/hero-data-center.png" alt="" aria-hidden="true" />
+            <div class="hero-shade" aria-hidden="true"></div>
+            <div class="shell hero-content">
+              <p>Soluções para o canal profissional</p>
+              <h2>Infraestrutura preparada para o teu negócio</h2>
+              <span>Servidores, redes e armazenamento com suporte para distribuidores e integradores.</span>
+              <a class="hero-button" href="#pc">Ver Soluções</a>
+            </div>
+          </article>
+
+          <article class="hero-slide" data-hero-slide aria-hidden="true">
+            <img class="hero-image" src="./assets/hero-components.png" alt="" aria-hidden="true" />
+            <div class="hero-shade" aria-hidden="true"></div>
+            <div class="shell hero-content">
+              <p>Hardware e performance</p>
+              <h2>Hardware para builds profissionais</h2>
+              <span>Hardware selecionado para gaming, workstations e manutenção técnica.</span>
+              <a class="hero-button" href="#hardware">Ver Hardware</a>
+            </div>
+          </article>
+        </div>
+
+        <button class="hero-arrow hero-arrow-prev" type="button" aria-label="Destaque anterior" data-hero-prev></button>
+        <button class="hero-arrow hero-arrow-next" type="button" aria-label="Próximo destaque" data-hero-next></button>
+
+        <div class="hero-dots" role="tablist" aria-label="Selecionar destaque">
+          <button class="is-active" type="button" aria-label="Mostrar destaque Tecnologia para Profissionais" aria-current="true" data-hero-dot></button>
+          <button type="button" aria-label="Mostrar destaque Infraestrutura" aria-current="false" data-hero-dot></button>
+          <button type="button" aria-label="Mostrar destaque Hardware" aria-current="false" data-hero-dot></button>
+        </div>
+      </section>
+
+      <nav class="category-nav" aria-label="Categorias principais" data-category-nav>
+        <div class="shell category-inner">
+          <div class="nav-item has-mega" data-mega-item>
+            <button type="button" aria-expanded="false" aria-controls="mega-hardware" data-mega-button>
+              Hardware
+              <span class="chevron" aria-hidden="true"></span>
+            </button>
+            <div class="mega-menu" id="mega-hardware" data-mega-menu>
+              <div class="shell mega-grid" aria-label="Famílias de hardware">
+                <section>
+                  <h2>Caixas pc</h2>
+                  <a href="#file-server">File server</a>
+                  <a href="#midi-tower">Midi tower</a>
+                  <a href="#mini-itx">Mini itx</a>
+                  <a href="#mini-tower-micro-atx">Mini tower - micro atx</a>
+                  <a href="#rack-industriais">Rack-industriais</a>
+                  <a href="#x-acessorios-diversos-caixas">X acessorios diversos</a>
+                </section>
+
+                <section>
+                  <h2>Coolers &amp; Ventiladores</h2>
+                  <a href="#air-cooling-cpu">Air cooling cpu</a>
+                  <a href="#coolers-portateis">Coolers portateis</a>
+                  <a href="#massa-termica">Massa termica</a>
+                  <a href="#socket-am4-amd">Socket am4-amd</a>
+                  <a href="#ventiladores">Ventiladores 80 120 140</a>
+                  <a href="#water-cooling">Water cooling</a>
+                </section>
+
+                <section>
+                  <h2>Controladores</h2>
+                  <a href="#diversos-acessorios-controladores">Diversos e acessorios</a>
+                  <a href="#pci-pcie-nvme-sata-ide">Pci, pcie, nvme, sata, ide</a>
+                  <a href="#serie-paralelo">Serie - paralelo</a>
+                  <a href="#usb-fw">Usb e fw</a>
+                </section>
+
+                <section>
+                  <h2>Discos rígidos &amp; SSD</h2>
+                  <a href="#diversos-discos">Diversos</a>
+                  <a href="#externos-data-storage">Externos - data storage</a>
+                  <a href="#internos-desktop">Internos 3.5p desktop</a>
+                  <a href="#ssd">Ssd</a>
+                </section>
+
+                <section>
+                  <h2>Fontes de alimentação</h2>
+                  <a href="#fontes-atx">Fontes atx</a>
+                  <a href="#fontes-atx-modulares">Fontes atx modulares</a>
+                  <a href="#fontes-flex-sfx-tfx">Fontes flex-sfx-tfx</a>
+                  <a href="#xz-acessorios-diversos">Xz acessorios diversos</a>
+                </section>
+
+                <section>
+                  <h2>Memorias</h2>
+                  <a href="#memorias-desktop">Memorias desktop</a>
+                  <a href="#memorias-notebooks">Memorias notebooks</a>
+                </section>
+
+                <section>
+                  <h2>Memórias pc-notebook</h2>
+                  <a href="#memorias-pc-notebook">Memórias pc-notebook</a>
+                  <a href="#memorias-desktop-ddr3">Memórias desktop ddr3</a>
+                  <a href="#memorias-desktop-ddr5">Memórias desktop ddr5</a>
+                  <a href="#memorias-notebooks-ddr1">Memórias notebooks ddr1</a>
+                  <a href="#memorias-notebooks-ddr2">Memórias notebooks ddr2</a>
+                  <a href="#memorias-notebooks-ddr3">Memórias notebooks ddr3</a>
+                </section>
+
+                <section>
+                  <h2>Monitores e televisores</h2>
+                  <a href="#gaming-monitores">Gaming</a>
+                  <a href="#office-monitores">Office</a>
+                  <a href="#produtos-diversos-acessorios">Produtos diversos acessorios</a>
+                  <a href="#touch">Touch</a>
+                </section>
+
+                <section>
+                  <h2>Motherboards</h2>
+                  <a href="#ab-lga1700">Ab-lga1700 14_13_12 geracao</a>
+                  <a href="#ac-lga1851">Ac-lga1851 15 geracao</a>
+                  <a href="#c-lga1151">C-lga1151 9_8 geracao</a>
+                  <a href="#d-lga1151">D-lga1151 7_6 geracao</a>
+                  <a href="#e-lga1150">E-lga1150</a>
+                  <a href="#i-servidor">I-servidor</a>
+                  <a href="#j-am4">J-am4</a>
+                  <a href="#l-am5">L-am5</a>
+                </section>
+
+                <section>
+                  <h2>Placas gráficas</h2>
+                  <a href="#diversos-placas">Diversos</a>
+                  <a href="#pci-express">Pci express</a>
+                </section>
+
+                <section>
+                  <h2>Processadores</h2>
+                  <a href="#amd">Amd</a>
+                  <a href="#intel">Intel</a>
+                </section>
+
+                <section>
+                  <h2>Soluções de armazenamento</h2>
+                  <a href="#caixas-25-10gb">Caixas discos 2.5 usb 3.1 10gb</a>
+                  <a href="#caixas-25-5gb">Caixas discos 2.5 usb 3.1 5gb</a>
+                  <a href="#caixas-35-raid">Caixas discos 3.5 sistema raid</a>
+                  <a href="#caixas-35-10gb">Caixas discos 3.5 usb 3.1 10gb</a>
+                  <a href="#caixas-35-5gb">Caixas discos 3.5 usb 3.1 5gb</a>
+                  <a href="#caixas-m2-msata">Caixas discos m.2, msata</a>
+                  <a href="#conversor-cdrom">Conversor cdrom para hdd</a>
+                  <a href="#docking-usb-30">Docking stations usb 3.0</a>
+                  <a href="#docking-usb-31">Docking stations usb 3.1</a>
+                  <a href="#gavetas-caixas-externas">Gavetas - caixas externas</a>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item has-mega" data-mega-item>
+            <button type="button" aria-expanded="false" aria-controls="mega-pc" data-mega-button>
+              PC
+              <span class="chevron" aria-hidden="true"></span>
+            </button>
+            <div class="mega-menu" id="mega-pc" data-mega-menu>
+              <div class="shell mega-grid" aria-label="Famílias de PC">
+                <section>
+                  <h2>Computadores &amp; mini pcs</h2>
+                  <a href="#acessorios-diversos-pc">Acessorios - diversos</a>
+                  <a href="#all-in-one">All in one</a>
+                  <a href="#barebones">Barebones</a>
+                  <a href="#build-to-order">Build to order</a>
+                  <a href="#mini-pcs">Mini pcs</a>
+                </section>
+
+                <section>
+                  <h2>Computadores portateis</h2>
+                  <a href="#notebooks">Notebooks</a>
+                  <a href="#pda-gps">Pda e gps</a>
+                  <a href="#spares-acessorios">Spares &amp; acessorios</a>
+                </section>
+
+                <section>
+                  <h2>Multimédia</h2>
+                  <a href="#auscultadores">Auscultadores</a>
+                  <a href="#camaras-web">Camaras web</a>
+                  <a href="#colunas-de-som">Colunas de som</a>
+                  <a href="#gaming-cadeiras">Gaming cadeiras</a>
+                  <a href="#placas-de-som">Placas de som</a>
+                  <a href="#placas-de-tv">Placas de tv</a>
+                  <a href="#spares-acessorios-multimedia">Spares &amp; acessorios</a>
+                </section>
+
+                <section>
+                  <h2>Software</h2>
+                  <a href="#microsoft-office">Microsoft office</a>
+                  <a href="#sistemas-operativos">Sistemas operativos</a>
+                </section>
+
+                <section>
+                  <h2>Tablets &amp; mini pcs</h2>
+                  <a href="#mini-pcs-android">Mini pcs android</a>
+                  <a href="#mini-pcs-windows">Mini pcs windows</a>
+                  <a href="#tablets-android">Tablets android</a>
+                  <a href="#x-acessorios-diversos">X acessorios diversos</a>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item has-mega" data-mega-item>
+            <button type="button" aria-expanded="false" aria-controls="mega-servidores" data-mega-button>
+              Servidores
+              <span class="chevron" aria-hidden="true"></span>
+            </button>
+            <div class="mega-menu" id="mega-servidores" data-mega-menu>
+              <div class="shell mega-grid" aria-label="Famílias de servidores">
+                <section>
+                  <h2>Servidores</h2>
+                  <a href="#chassis-servidores">Chassis servidores</a>
+                  <a href="#servidores-asus-barebones">Servidores asus - barebones</a>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item has-mega" data-mega-item>
+            <button type="button" aria-expanded="false" aria-controls="mega-perifericos" data-mega-button>
+              Periféricos
+              <span class="chevron" aria-hidden="true"></span>
+            </button>
+            <div class="mega-menu" id="mega-perifericos" data-mega-menu>
+              <div class="shell mega-grid" aria-label="Famílias de periféricos">
+                <section>
+                  <h2>Monitores e televisores</h2>
+                  <a href="#perifericos-gaming-monitores">Gaming</a>
+                  <a href="#perifericos-office-monitores">Office</a>
+                  <a href="#perifericos-produtos-diversos-acessorios">Produtos diversos acessorios</a>
+                  <a href="#perifericos-touch">Touch</a>
+                </section>
+
+                <section>
+                  <h2>Mouse</h2>
+                  <a href="#perifericos-mouse-opticos-laser-usb">Opticos &amp; laser - ligacao usb</a>
+                  <a href="#perifericos-tapetes">Tapetes</a>
+                  <a href="#perifericos-mouse-wireless">Wireless</a>
+                </section>
+
+                <section>
+                  <h2>Multimédia</h2>
+                  <a href="#perifericos-auscultadores">Auscultadores</a>
+                  <a href="#perifericos-camaras-web">Camaras web</a>
+                  <a href="#perifericos-colunas-de-som">Colunas de som</a>
+                  <a href="#perifericos-gaming-cadeiras">Gaming cadeiras</a>
+                  <a href="#perifericos-placas-de-som">Placas de som</a>
+                  <a href="#perifericos-placas-de-tv">Placas de tv</a>
+                  <a href="#perifericos-spares-acessorios">Spares &amp; acessorios</a>
+                </section>
+
+                <section>
+                  <h2>Teclados</h2>
+                  <a href="#perifericos-teclados-gamer">Gamer</a>
+                  <a href="#perifericos-teclados-industriais">Industriais</a>
+                  <a href="#perifericos-teclados-standard">Standard</a>
+                  <a href="#perifericos-teclados-wireless">Wireless</a>
+                </section>
+
+                <section>
+                  <h2><a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=131&Itemid=64">Terminais de ponto de venda</a></h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=132&Itemid=64">Elotouch</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=133&Itemid=64">Gavetas de dinheiro</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=134&Itemid=64">Impressoras de taloes</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=562&Itemid=64">Monitores touch screen</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=136&Itemid=64">Pos assemblados</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=135&Itemid=64">Scanners de codigo de barras</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=137&Itemid=64">Visores de cliente</a>
+                </section>
+
+                <section>
+                  <h2>Alimentadores &amp; powerbanks</h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=967&Itemid=64">Alimentadores notebooks</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=4655&Itemid=64">Alimentadores usb pd qc</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=955&Itemid=64">Diversos</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=4653&Itemid=64">Power banks</a>
+                </section>
+
+                <section>
+                  <h2>Drives opticas</h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=152&Itemid=64">Gravadores de dvd</a>
+                </section>
+
+                <section>
+                  <h2>Modding</h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=3913&Itemid=64">Controladores rgb-fan</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=3919&Itemid=64">Led strips</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=3915&Itemid=64">Rgb fans</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=4614&Itemid=64">X acessorios diversos</a>
+                </section>
+
+                <section>
+                  <h2>Scanners e impressoras</h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=161&Itemid=64">Scanners</a>
+                </section>
+
+                <section>
+                  <h2>Unidade de alim. ininterrupta</h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=4692&Itemid=64">Ev-mobilidade eletrica</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=171&Itemid=64">Standard</a>
+                </section>
+
+                <section>
+                  <h2>Usb hubs &amp; leitores de cartoes</h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=963&Itemid=64">Fdd &amp; leitores cartoes</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=965&Itemid=64">Hubs usb</a>
+                </section>
+
+                <section>
+                  <h2>Usb pen &amp; flash memory</h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=651&Itemid=64">Flash memory - secure digital</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=647&Itemid=64">Usb pen drive</a>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item has-mega" data-mega-item>
+            <button type="button" aria-expanded="false" aria-controls="mega-redes" data-mega-button>
+              Redes
+              <span class="chevron" aria-hidden="true"></span>
+            </button>
+            <div class="mega-menu" id="mega-redes" data-mega-menu>
+              <div class="shell mega-grid" aria-label="Famílias de redes">
+                <section class="stacked-families">
+                  <h2><a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=951&Itemid=64">Domotica, office &amp; casa</a></h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=952&Itemid=64">Domotica</a>
+                  <h2><a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=174&Itemid=64">Power line</a></h2>
+                  <h2><a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=173&Itemid=64">Produtos diversos</a></h2>
+                </section>
+
+                <section>
+                  <h2><a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=191&Itemid=64">Redes sem fios</a></h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=201&Itemid=64">Adaptadores usb</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=192&Itemid=64">Antenas - boosters</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=4650&Itemid=64">Media players</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=194&Itemid=64">Placas de rede</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=195&Itemid=64">Placas pcmcia</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=197&Itemid=64">Routers</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=193&Itemid=64">Tecnologia bluetooth</a>
+                </section>
+
+                <section>
+                  <h2><a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=175&Itemid=64">Redes standard com fios</a></h2>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=176&Itemid=64">Câmaras ip</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=178&Itemid=64">Hubs - switches</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=179&Itemid=64">Hubs usb - firewire</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=180&Itemid=64">Modems</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=183&Itemid=64">Placas de rede</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=184&Itemid=64">Power over ethernet</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=186&Itemid=64">Routers</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&category_id=189&Itemid=64">Telefones &amp; centrais</a>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item has-mega" data-mega-item>
+            <button type="button" aria-expanded="false" aria-controls="mega-electronica" data-mega-button>
+              Electrónica
+              <span class="chevron" aria-hidden="true"></span>
+            </button>
+            <div class="mega-menu" id="mega-electronica" data-mega-menu>
+              <div class="shell mega-grid" aria-label="Famílias de electrónica">
+                <section>
+                  <h2>Acessorios de telefones</h2>
+                  <a href="#electronica-adaptadores">Adaptadores</a>
+                  <a href="#electronica-baterias-telefones">Baterias</a>
+                  <a href="#electronica-campainhas">Campainhas</a>
+                </section>
+
+                <section>
+                  <h2>Antenas rádio-tv</h2>
+                  <a href="#electronica-antenas-radio-tv-internas">Antenas rádio-tv internas</a>
+                </section>
+
+                <section>
+                  <h2>Baterias</h2>
+                  <a href="#electronica-baterias-alcalinas">Baterias alcalinas</a>
+                  <a href="#electronica-baterias-chumbo">Baterias de chumbo</a>
+                  <a href="#electronica-baterias-litio">Baterias de lítio</a>
+                  <a href="#electronica-baterias-niquel">Baterias de niquel</a>
+                  <a href="#electronica-baterias-portateis">Baterias para portateis</a>
+                </section>
+
+                <section>
+                  <h2>Baterias + carregadores</h2>
+                  <a href="#electronica-carregadores-baterias">Carregadores</a>
+                </section>
+
+                <section>
+                  <h2>Cabecas</h2>
+                  <a href="#electronica-cabecas-video">Cabecas de video</a>
+                </section>
+
+                <section>
+                  <h2>Cabos &amp; conversores</h2>
+                  <a href="#electronica-cabos-alimentacao">Cabos alimentacao</a>
+                  <a href="#electronica-cabos-audio">Cabos audio</a>
+                  <a href="#electronica-cabos-dados">Cabos dados</a>
+                  <a href="#electronica-cabos-radio-frequencia">Cabos radio frequencia</a>
+                  <a href="#electronica-cabos-rede">Cabos rede</a>
+                  <a href="#electronica-cabos-telefone">Cabos telefone</a>
+                  <a href="#electronica-cabos-video">Cabos video</a>
+                  <a href="#electronica-conversores-audio">Conversores audio</a>
+                  <a href="#electronica-conversores-dados">Conversores dados</a>
+                  <a href="#electronica-conversores-video">Conversores video</a>
+                  <a href="#electronica-extensores-audio-video">Extensores audio &amp; video</a>
+                  <a href="#electronica-kvm-splitter-switch">Kvm-splitter-switch</a>
+                </section>
+
+                <section>
+                  <h2>Carregadores</h2>
+                  <a href="#electronica-carregadores-impressoras">Impressoras</a>
+                  <a href="#electronica-carregadores-portateis">Portateis</a>
+                  <a href="#electronica-carregadores-telemoveis">Telemoveis</a>
+                  <a href="#electronica-carregadores-universais">Universais</a>
+                  <a href="#electronica-carregadores-usb">Usb</a>
+                </section>
+
+                <section>
+                  <h2>Componentes electronicos</h2>
+                  <a href="#electronica-buzzers-speakers">Buzzer's &amp; speakers</a>
+                  <a href="#electronica-caixas-electronica">Caixas para electronica</a>
+                  <a href="#electronica-circuitos-integrados">Circuitos integrados</a>
+                  <a href="#electronica-condensadores">Condensadores</a>
+                  <a href="#electronica-cristais">Cristais</a>
+                  <a href="#electronica-diodos">Diodos</a>
+                  <a href="#electronica-diodos-tranzorbs">Diodos - tranzorbs</a>
+                  <a href="#electronica-displays">Display's</a>
+                  <a href="#electronica-fichas">Fichas</a>
+                  <a href="#electronica-filtros">Filtros</a>
+                  <a href="#electronica-fusiveis">Fusiveis</a>
+                  <a href="#electronica-impressoras-mecanismos">Impressoras &amp; mecanismos</a>
+                  <a href="#electronica-indicadores-medida">Indicadores de medida</a>
+                  <a href="#electronica-interruptores">Interruptores</a>
+                  <a href="#electronica-leitores-cartoes-magneticos">Leitores de cartoes magneticos</a>
+                  <a href="#electronica-optica-optocouplers">Optica - optocouplers</a>
+                  <a href="#electronica-pcbs">Pcb's</a>
+                  <a href="#electronica-potenciometros">Potenciometros</a>
+                  <a href="#electronica-reles">Relés</a>
+                  <a href="#electronica-resistencias">Resistencias</a>
+                  <a href="#electronica-sensores">Sensores</a>
+                  <a href="#electronica-suportes">Suportes</a>
+                  <a href="#electronica-transformadores">Transformadores</a>
+                  <a href="#electronica-transistores">Transistores</a>
+                  <a href="#electronica-valvulas">Valvulas</a>
+                  <a href="#electronica-varistor">Varistor</a>
+                </section>
+
+                <section>
+                  <h2>Desporto &amp; lazer</h2>
+                  <a href="#electronica-acessorios-diversos-lazer">Acessorios diversos</a>
+                  <a href="#electronica-desporto">Desporto</a>
+                  <a href="#electronica-consumo">Electronica de consumo</a>
+                </section>
+
+                <section>
+                  <h2>Ferramentas</h2>
+                  <a href="#electronica-alicates">Alicates</a>
+                  <a href="#electronica-berbequins">Berbequins</a>
+                  <a href="#electronica-chaves">Chaves</a>
+                  <a href="#electronica-optica">Optica</a>
+                  <a href="#electronica-pincas">Pinças</a>
+                  <a href="#electronica-pistolas-cola">Pistolas de cola</a>
+                  <a href="#electronica-produtos-diversos-ferramentas">Produtos diversos</a>
+                  <a href="#electronica-x-actos">X-actos</a>
+                </section>
+
+                <section>
+                  <h2>Kit's e produtos didácticos</h2>
+                  <a href="#electronica-breadboards">Breadboards</a>
+                  <a href="#electronica-kits-didacticos">Kit´s didácticos</a>
+                </section>
+
+                <section>
+                  <h2>Luz &amp; som</h2>
+                  <a href="#electronica-audio">Audio</a>
+                  <a href="#electronica-disco-light">Disco light</a>
+                  <a href="#electronica-lampadas-diversos">Lampadas diversos</a>
+                </section>
+
+                <section>
+                  <h2>Produtos de utilização geral</h2>
+                  <a href="#electronica-alimentadores">Alimentadores</a>
+                  <a href="#electronica-iluminacao">Iluminação</a>
+                  <a href="#electronica-produtos-diversos-geral">Produtos diversos</a>
+                  <a href="#electronica-telecomandos">Telecomandos</a>
+                  <a href="#electronica-transformadores-geral">Transformadores</a>
+                </section>
+
+                <section>
+                  <h2>Produtos para segurança</h2>
+                  <a href="#electronica-acessorios-diversos-seguranca">Acessorios diversos</a>
+                  <a href="#electronica-auto">Auto</a>
+                  <a href="#electronica-movimento">Movimento</a>
+                  <a href="#electronica-sirenes">Sirenes</a>
+                </section>
+
+                <section>
+                  <h2>Protecção anti-estáctica</h2>
+                </section>
+
+                <section>
+                  <h2>Spray</h2>
+                  <a href="#electronica-sprays">Spray's</a>
+                </section>
+
+                <section>
+                  <h2>Televisao digital terrestre</h2>
+                </section>
+
+                <section>
+                  <h2>Ventiladores (fan's)</h2>
+                  <a href="#electronica-corrente-alterna">Corrente alterna</a>
+                  <a href="#electronica-corrente-continua">Corrente continua</a>
+                  <a href="#electronica-diversos-ventiladores">Diversos</a>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item has-mega" data-mega-item>
+            <button type="button" aria-expanded="false" aria-controls="mega-marcas" data-mega-button>
+              Marcas
+              <span class="chevron" aria-hidden="true"></span>
+            </button>
+            <div class="mega-menu" id="mega-marcas" data-mega-menu>
+              <div class="shell mega-grid mega-brand-grid" aria-label="Marcas parceiras">
+                <section>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8402&Itemid=64">ADATA</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8676&Itemid=64">AEROCOOL</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8025&Itemid=64">AMD</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8403&Itemid=64">AOC</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8051&Itemid=64">ASROCK</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8027&Itemid=64">ASUS</a>
+                </section>
+
+                <section>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8507&Itemid=64">ASUSTOR</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8044&Itemid=64">BLUERAY</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8525&Itemid=64">CHIEFTEC</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8432&Itemid=64">CRUCIAL</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8459&Itemid=64">ECS</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8290&Itemid=64">FSP</a>
+                </section>
+
+                <section>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8441&Itemid=64">G.SKILL</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8015&Itemid=64">GIGABYTE</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8064&Itemid=64">HANNSPREE</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8095&Itemid=64">HP</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8679&Itemid=64">INNO3D</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8012&Itemid=64">INTEL</a>
+                </section>
+
+                <section>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8684&Itemid=64">KFA2</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8056&Itemid=64">KINGSTON</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8681&Itemid=64">LEXAR</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8666&Itemid=64">MARS GAMING</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8097&Itemid=64">MICROSOFT</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8487&Itemid=64">MINIX</a>
+                </section>
+
+                <section>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8106&Itemid=64">MKPLUS</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8322&Itemid=64">MSI</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8019&Itemid=64">NTECH</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8492&Itemid=64">NZXT</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8923&Itemid=64">PNY</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8424&Itemid=64">SHUTTLE</a>
+                </section>
+
+                <section>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8050&Itemid=64">TOSHIBA</a>
+                  <a href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8111&Itemid=64">TP-LINK</a>
+                </section>
+              </div>
+            </div>
+          </div>
+          <a href="#configurador">Configurador</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="products-section catalog-feed-section" id="produtos" aria-labelledby="catalog-feed-title" data-products-module>
+        <div class="shell">
+          <div class="catalog-feed-card is-collapsed">
+            <div class="catalog-feed-bar">
+              <div class="catalog-feed-heading" role="tablist" aria-label="Selecionar listagem de produtos">
+                <button class="is-active" id="catalog-feed-title" type="button" role="tab" aria-selected="true" data-products-feed="arrivals">Acabados de Chegar</button>
+                <button type="button" role="tab" aria-selected="false" data-products-feed="news">Novidades</button>
+              </div>
+
+              <div class="catalog-feed-tools">
+                <div class="catalog-view-toggle" aria-label="Alternar visualização de produtos">
+                  <button class="is-active" type="button" aria-label="Ver em lista" aria-pressed="true" data-products-view="list">
+                    <span class="list-view-icon" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" aria-label="Ver em ícones" aria-pressed="false" data-products-view="grid">
+                    <span class="grid-view-icon" aria-hidden="true"></span>
+                  </button>
+                </div>
+
+                <div class="catalog-feed-filters" aria-label="Filtrar produtos destacados">
+                  <button class="is-active" type="button" data-products-filter="Todos">Todos</button>
+                  <button type="button" data-products-filter="Tecnologia gaming">Tecnologia gaming</button>
+                  <button type="button" data-products-filter="PC Office">PC Office</button>
+                  <button type="button" data-products-filter="Workstation">Workstation</button>
+                  <button type="button" data-products-filter="AI Solutions">AI Solutions</button>
+                  <button type="button" data-products-filter="NUC / Mini PC">NUC / Mini PC</button>
+                  <button type="button" data-products-filter="AIO all-in-one">AIO all-in-one</button>
+                  <button type="button" data-products-filter="Servidores">Servidores</button>
+                  <button type="button" data-products-filter="Hardware">Hardware</button>
+                </div>
+
+                <select class="catalog-period" aria-label="Período de produtos" data-products-period>
+                  <option>2 dias</option>
+                  <option>1 semana</option>
+                  <option>4 semanas</option>
+                </select>
+
+                <button class="catalog-excel" type="button" aria-label="Descarregar lista selecionada em Excel" data-products-export></button>
+                <button class="catalog-collapse" type="button" aria-label="Expandir produtos" aria-expanded="false" aria-controls="catalog-feed-results" data-products-collapse>
+                  <span aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="catalog-feed-panel" id="catalog-feed-results" data-products-panel>
+              <div class="catalog-feed-layout">
+                <aside class="catalog-sidebar" aria-label="Filtros do catálogo">
+                  <div class="catalog-sidebar-header">
+                    <h3>Filtrar catálogo</h3>
+                    <button type="button" data-catalog-clear>Limpar</button>
+                  </div>
+
+                  <form class="catalog-sidebar-search" role="search" data-products-search>
+                    <label for="catalog-sidebar-query">Pesquisar nos produtos</label>
+                    <input
+                      id="catalog-sidebar-query"
+                      name="catalog-query"
+                      type="search"
+                      placeholder="Referência, marca ou produto"
+                      autocomplete="off"
+                      data-products-search-input
+                    />
+                  </form>
+
+                  <details class="catalog-filter-group" open>
+                    <summary>Marcas</summary>
+                    <div class="catalog-filter-options" data-catalog-options="brand"></div>
+                  </details>
+
+                  <details class="catalog-filter-group" open>
+                    <summary>Famílias</summary>
+                    <div class="catalog-filter-options" data-catalog-options="family"></div>
+                  </details>
+
+                  <details class="catalog-filter-group" open>
+                    <summary>Tipo de produto</summary>
+                    <div class="catalog-filter-options" data-catalog-options="type"></div>
+                  </details>
+                </aside>
+
+                <div class="catalog-feed-results">
+                  <div class="catalog-results-toolbar">
+                    <strong data-catalog-results-count>0 produtos</strong>
+                    <select aria-label="Ordenar produtos" data-catalog-sort>
+                      <option value="recent">Ordenar: mais recentes</option>
+                      <option value="brand">Marca A-Z</option>
+                      <option value="price-asc">Preço: menor primeiro</option>
+                      <option value="price-desc">Preço: maior primeiro</option>
+                    </select>
+                  </div>
+                  <div class="products-grid is-list-view" data-products-grid aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="business-areas-section" aria-labelledby="business-areas-title">
+        <div class="shell">
+          <h2 class="sr-only" id="business-areas-title">Áreas de negócio</h2>
+          <div class="business-areas-grid">
+            <a class="business-card" href="#area-gaming">
+              <img src="./assets/business-gaming.png" alt="" aria-hidden="true" />
+              <span>Tecnologia gaming</span>
+            </a>
+            <a class="business-card" href="#area-pc-office">
+              <img src="./assets/business-office.png" alt="" aria-hidden="true" />
+              <span>PC Office</span>
+            </a>
+            <a class="business-card" href="#area-workstation">
+              <img src="./assets/business-workstation.png" alt="" aria-hidden="true" />
+              <span>Workstation</span>
+            </a>
+            <a class="business-card" href="#area-ai-solutions">
+              <img src="./assets/business-ai.png" alt="" aria-hidden="true" />
+              <span>AI Solutions</span>
+            </a>
+            <a class="business-card" href="#area-nuc-mini-pc">
+              <img src="./assets/business-mini-pc.png" alt="" aria-hidden="true" />
+              <span>NUC / Mini PC</span>
+            </a>
+            <a class="business-card" href="#area-aio">
+              <img src="./assets/business-aio.png" alt="" aria-hidden="true" />
+              <span>AIO all-in-one</span>
+            </a>
+            <a class="business-card" href="#area-servidores">
+              <img src="./assets/business-servers.png" alt="" aria-hidden="true" />
+              <span>Servidores</span>
+            </a>
+            <a class="business-card" href="#area-hardware">
+              <img src="./assets/business-hardware.png" alt="" aria-hidden="true" />
+              <span>Hardware</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="daily-promos-section" aria-labelledby="daily-promos-title">
+        <div class="shell">
+          <h2 id="daily-promos-title">PROMOÇÕES DO DIA</h2>
+          <div class="daily-promos-carousel" data-promos-carousel>
+            <div class="daily-promos-track" data-promos-track>
+              <article class="promo-card">
+                <h3>PRIME H610M-R ASUS</h3>
+                <img src="./assets/promo-prime-h610m-r-asus.png" alt="PRIME H610M-R ASUS" />
+                <a href="https://www.niposom.pt/index.php?page=shop.product_details&flypage=flypage.tpl&product_id=39506&category_id=4694&option=com_virtuemart&Itemid=64">Saiba Mais</a>
+              </article>
+              <article class="promo-card">
+                <h3>EUROSYS BAREBONE 2</h3>
+                <img src="./assets/promo-eurosys-barebone-2.png" alt="EUROSYS BAREBONE 2" />
+                <a href="https://www.niposom.pt/index.php?page=shop.product_details&flypage=flypage.tpl&product_id=907&category_id=833&option=com_virtuemart&Itemid=64">Saiba Mais</a>
+              </article>
+              <article class="promo-card">
+                <h3>NUC N5095 WIN11P</h3>
+                <img src="./assets/promo-nuc-n5095.png" alt="NUC N5095 WIN11P" />
+                <a href="https://www.niposom.pt/index.php?page=shop.product_details&flypage=flypage.tpl&product_id=40161&category_id=836&option=com_virtuemart&Itemid=64">Saiba Mais</a>
+              </article>
+              <article class="promo-card">
+                <h3>NUC 3500 AMD WIN11PRO</h3>
+                <img src="./assets/promo-nuc-3500.png" alt="NUC 3500 AMD WIN11PRO" />
+                <a href="https://www.niposom.pt/index.php?page=shop.product_details&flypage=flypage.tpl&product_id=40130&category_id=836&option=com_virtuemart&Itemid=64">Saiba Mais</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partner-brands-section" id="parceiros-marcas" aria-labelledby="partner-brands-title">
+        <div class="shell">
+          <h2 id="partner-brands-title">PARCEIROS E MARCAS</h2>
+          <div class="partner-brands-carousel" data-brands-carousel>
+            <div class="partner-brands-track" data-brands-track>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8402&Itemid=64"><img src="./assets/brand-logos/adata.jpg" alt="ADATA" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8676&Itemid=64"><img src="./assets/brand-logos/aerocool.jpg" alt="AeroCool" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8025&Itemid=64"><img src="./assets/brand-logos/amd.jpg" alt="AMD" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8403&Itemid=64"><img src="./assets/brand-logos/aoc.jpg" alt="AOC" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8051&Itemid=64"><img src="./assets/brand-logos/asrock.jpg" alt="ASRock" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8027&Itemid=64"><img src="./assets/brand-logos/asus.jpg" alt="ASUS" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8507&Itemid=64"><img src="./assets/brand-logos/asustor.jpg" alt="ASUSTOR" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8044&Itemid=64"><img src="./assets/brand-logos/blueray.jpg" alt="BlueRay" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8525&Itemid=64"><img src="./assets/brand-logos/chieftec.jpg" alt="Chieftec" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8432&Itemid=64"><img src="./assets/brand-logos/crucial.jpg" alt="Crucial" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8459&Itemid=64"><img src="./assets/brand-logos/ecs.jpg" alt="ECS Elitegroup" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8290&Itemid=64"><img src="./assets/brand-logos/fsp.jpg" alt="FSP Group" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8015&Itemid=64"><img src="./assets/brand-logos/gigabyte.jpg" alt="Gigabyte" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8441&Itemid=64"><img src="./assets/brand-logos/gskill.jpg" alt="G.Skill" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8064&Itemid=64"><img src="./assets/brand-logos/hannspree.jpg" alt="HANNspree" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8095&Itemid=64"><img src="./assets/brand-logos/hp.jpg" alt="HP" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8679&Itemid=64"><img src="./assets/brand-logos/inno3d.jpg" alt="INNO3D" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8012&Itemid=64"><img src="./assets/brand-logos/intel.jpg" alt="Intel" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8684&Itemid=64"><img src="./assets/brand-logos/kfa2.jpg" alt="KFA2" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8056&Itemid=64"><img src="./assets/brand-logos/kingston.jpg" alt="Kingston Technology" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8681&Itemid=64"><img src="./assets/brand-logos/lexar.jpg" alt="Lexar" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8666&Itemid=64"><img src="./assets/brand-logos/marsgaming.jpg" alt="Mars Gaming" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8097&Itemid=64"><img src="./assets/brand-logos/microsoft.jpg" alt="Microsoft" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8487&Itemid=64"><img src="./assets/brand-logos/minix.jpg" alt="MINIX" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8106&Itemid=64"><img src="./assets/brand-logos/mkplus.jpg" alt="MKPlus" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8322&Itemid=64"><img src="./assets/brand-logos/msi.png" alt="MSI" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8019&Itemid=64"><img src="./assets/brand-logos/ntech.jpg" alt="NTech" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8492&Itemid=64"><img src="./assets/brand-logos/nzxt.jpg" alt="NZXT" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8923&Itemid=64"><img src="./assets/brand-logos/pny.jpg" alt="PNY" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8424&Itemid=64"><img src="./assets/brand-logos/shuttle.jpg" alt="Shuttle" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8050&Itemid=64"><img src="./assets/brand-logos/toshiba.jpg" alt="Toshiba" /></a>
+              <a class="partner-brand-card" href="https://www.niposom.pt/index.php?option=com_virtuemart&page=shop.browse&manufacturer_id=8111&Itemid=64"><img src="./assets/brand-logos/tplink.jpg" alt="TP-Link" /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="conversion-section" aria-label="Newsletter e programa de parceiros">
+        <article class="conversion-panel conversion-newsletter">
+          <div class="conversion-content">
+            <h2>Quer ser o primeiro a receber as nossas novidades?</h2>
+            <form class="newsletter-form" data-newsletter-form>
+              <label class="sr-only" for="newsletter-email">O seu email profissional</label>
+              <input id="newsletter-email" name="email" type="email" placeholder="O seu email profissional" autocomplete="email" required />
+              <button type="submit" data-newsletter-submit>Subscrever</button>
+            </form>
+            <p class="conversion-feedback" aria-live="polite" data-newsletter-feedback></p>
+          </div>
+        </article>
+
+        <article class="conversion-panel conversion-partner">
+          <div class="conversion-content">
+            <p>Novos Clientes</p>
+            <h2>Torne-se o nosso parceiro</h2>
+            <a href="#tornar-se-parceiro">Preencher o formulário</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-main">
+        <div class="footer-brand-column">
+          <a class="footer-brand" href="/" aria-label="Niposom início">
+            <img src="./assets/niposom-mark.png" alt="Niposom" />
+          </a>
+          <p>Distribuição de tecnologia, componentes e soluções profissionais para revendedores, integradores e empresas.</p>
+          <address>
+            <strong>Lisboa — Sede</strong>
+            <span>Rua Humberto Cruz, 4</span>
+            <span>1900-260 Lisboa</span>
+          </address>
+          <a href="tel:+351218440200">+351 218 440 200</a>
+          <a href="mailto:comercial@niposom.com">comercial@niposom.com</a>
+          <p class="footer-hours">2ª a 6ª: 09:00–13:00 / 14:00–19:00</p>
+        </div>
+
+        <nav class="footer-column" aria-labelledby="footer-company-title">
+          <h2 id="footer-company-title">Niposom</h2>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=5&amp;Itemid=42">A empresa</a>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=179&amp;Itemid=86">Missão</a>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=183&amp;Itemid=89">Áreas de negócio</a>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=185&amp;Itemid=90">Projetos especiais</a>
+          <a href="https://form.jotform.com/241634845090053">Carreiras</a>
+          <a href="https://www.niposom.pt/index.php?option=com_contact&amp;view=contact&amp;id=1:niposom&amp;catid=12:contacts&amp;Itemid=18">Contactos</a>
+        </nav>
+
+        <nav class="footer-column" aria-labelledby="footer-support-title">
+          <h2 id="footer-support-title">Compras e suporte</h2>
+          <a href="#produtos">Catálogo de produtos</a>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=178&amp;Itemid=174">Catálogos PDF</a>
+          <a href="http://www.niposom.pt/site_rma/">Suporte e RMA</a>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=181&amp;Itemid=92">Garantia e assistência</a>
+          <a href="#tornar-se-parceiro">Tornar-se parceiro</a>
+          <button type="button" data-account-toggle aria-expanded="false" aria-controls="account-panel">Área de cliente</button>
+        </nav>
+
+        <nav class="footer-column footer-stores" aria-labelledby="footer-stores-title">
+          <h2 id="footer-stores-title">Lojas Niposom</h2>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=96&amp;Itemid=108">
+            <strong>Lisboa — Sede</strong>
+            <span>Rua Humberto Cruz, 4</span>
+          </a>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=189&amp;Itemid=109">
+            <strong>Lisboa — Venda Direta</strong>
+            <span>Largo Casal Vistoso, 1 B</span>
+          </a>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=99&amp;Itemid=110">
+            <strong>Guarda</strong>
+            <span>Av. Cidade de Bejar, 10 R/C Esq.</span>
+          </a>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=100&amp;Itemid=112">
+            <strong>Castelo Branco</strong>
+            <span>Praceta Dr. Manuel Pires Bento, Lote 14</span>
+          </a>
+          <a href="https://www.niposom.pt/index.php?option=com_content&amp;view=article&amp;id=101&amp;Itemid=113">
+            <strong>Aveiro</strong>
+            <span>Rua Dr. Mário Sacramento, 141</span>
+          </a>
+        </nav>
+
+        <nav class="footer-column" aria-labelledby="footer-legal-title">
+          <h2 id="footer-legal-title">Informação legal</h2>
+          <a href="#termos-condicoes">Termos e condições</a>
+          <a href="#politica-privacidade">Política de privacidade</a>
+          <a href="#politica-cookies">Política de cookies</a>
+          <a href="#resolucao-litigios">Resolução de litígios</a>
+          <a href="https://www.livroreclamacoes.pt/inicio">Livro de Reclamações</a>
+          <a href="https://www.facebook.com/niposom">Facebook</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="shell">
+          <p>© 2026 Niposom. Todos os direitos reservados.</p>
+          <p>Preços, disponibilidade e condições sujeitos a confirmação comercial.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/products-data.js"></script>
+    <script src="./header.js?v=20260624-footer"></script>
+  </body>
+</html>
